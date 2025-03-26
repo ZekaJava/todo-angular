@@ -13,7 +13,7 @@ import { TodoService } from "../../services/todo.service";
             type="text"
             id="title"
             class="form-input"
-            [(ngModel)]="tittle"
+            [(ngModel)]="title"
             name="title"
             placeholder="Enter todo title"
             required
@@ -61,7 +61,7 @@ export class TodoFormComponent {
         description: this.description,
         dueDate: this.dueDate,
         completed: false,
-        createdAt: new Date(),
+        createdAt: new Date().toISOString(),
       });
       this.title = "";
       this.description = "";

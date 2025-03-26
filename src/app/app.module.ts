@@ -12,7 +12,9 @@ import { TodoPageComponent } from "./pages/todo-page/todo-page.component";
 @NgModule({
   declarations: [
     AppComponent,
+    TodoFormComponent,
     TodoItemComponent,
+    TodoListComponent,
     TodoPageComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
