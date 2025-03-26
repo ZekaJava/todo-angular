@@ -8,6 +8,7 @@ import { TodoFormComponent } from "./components/todo-form/todo-form.component";
 import { TodoItemComponent } from "./components/todo-item/todo-item.component";
 import { TodoListComponent } from "./components/todo-list/todo-list.component";
 import { TodoPageComponent } from "./pages/todo-page/todo-page.component";
+import { JiraLikeKanbanComponent } from "./components/jira-like-kanban/jira-like-kanban.component";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TodoPageComponent } from "./pages/todo-page/todo-page.component";
     TodoItemComponent,
     TodoListComponent,
     TodoPageComponent,
+    JiraLikeKanbanComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
