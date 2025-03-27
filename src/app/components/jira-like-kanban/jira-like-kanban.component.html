@@ -18,16 +18,18 @@
               {{ column.name }}
             </div>
             <div
+              cdkDropList
               class="tickets-container"
               id="{{ column.id }}"
               [cdkDropListConnectedTo]="['1', '2', '3', '4']"
-              cdkDropList
               [cdkDropListData]="column.tickets"
               (cdkDropListDropped)="drop($event)"
             >
-              <div class="tickets" *ngFor="let item of column.tickets" cdkDrag>
-                {{ item }}
-              </div>
+              <mat-card class="tickets" *ngFor="let ticket of column.tickets; let i = index" cdkDrag>
+                <button class="close" mat-button (click)="removeTicket(i)">X</button>
+                <mat-card-title>{{ ticket.title }} </mat-card-title>
+                <mat-card-content>{{ ticket.description }}</mat-card-content>
+              </mat-card>
             </div>
           </div>
         </div>

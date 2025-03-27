@@ -10,6 +10,7 @@ import { TodoListComponent } from "./components/todo-list/todo-list.component";
 import { TodoPageComponent } from "./pages/todo-page/todo-page.component";
 import { JiraLikeKanbanComponent } from "./components/jira-like-kanban/jira-like-kanban.component";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
     TodoPageComponent,
     JiraLikeKanbanComponent
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, DragDropModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, DragDropModule, MatCardModule],
   providers: [],
   bootstrap: [AppComponent],
 })
