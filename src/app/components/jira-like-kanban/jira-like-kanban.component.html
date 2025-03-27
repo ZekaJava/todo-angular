@@ -3,13 +3,32 @@
     <div class="kanban-board-wrapper">
       <div class="kanban-board-columns">
         <div
-          cdkDragLockAxis="x"
-          class="kanban-board-column"
-          *ngFor="let column of kanbanBoard.kanbanColumns"
-          cdkDrag
+          cdkDropList
+          cdkDropListOrientation="horizontal"
+          class="kanban-board-columns"
+          (cdkDropListDropped)="dropGrid($event)"
         >
-          <div class="kanban-column-title" cdkDragHandle>
-            {{ column.name }}
+          <div
+            cdkDragLockAxis="x"
+            class="kanban-board-column"
+            *ngFor="let column of kanbanBoard.kanbanColumns"
+            cdkDrag
+          >
+            <div class="kanban-column-title" cdkDragHandle>
+              {{ column.name }}
+            </div>
+            <div
+              class="tickets-container"
+              id="{{ column.id }}"
+              [cdkDropListConnectedTo]="['1', '2', '3', '4']"
+              cdkDropList
+              [cdkDropListData]="column.tickets"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div class="tickets" *ngFor="let item of column.tickets" cdkDrag>
+                {{ item }}
+              </div>
+            </div>
           </div>
         </div>
       </div>

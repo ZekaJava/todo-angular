@@ -69,6 +69,15 @@ body {
   opacity: 0.9;
 }
 
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  opacity: 0.9;
+}
+
 .form-input {
   width: 100%;
   padding: 0.5rem 0.75rem;
@@ -136,6 +145,16 @@ body {
 
 .header button {
   margin-left: 0.5rem;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-header a {
+  float: right;
+  text-decoration: none;
 }
 
 .due-date {

@@ -9,6 +9,7 @@ import { TodoItemComponent } from "./components/todo-item/todo-item.component";
 import { TodoListComponent } from "./components/todo-list/todo-list.component";
 import { TodoPageComponent } from "./pages/todo-page/todo-page.component";
 import { JiraLikeKanbanComponent } from "./components/jira-like-kanban/jira-like-kanban.component";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { JiraLikeKanbanComponent } from "./components/jira-like-kanban/jira-like
     TodoPageComponent,
     JiraLikeKanbanComponent
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, DragDropModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,11 +1,16 @@
 import { Component } from "@angular/core";
 import { TodoService } from "../../services/todo.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-todo-form",
   template: `
     <div>
-      <h2>Add New Todo</h2>
+      <div class="todo-header">
+        <h2>Add New Todo</h2>
+        <button type="button" class="btn btn-success" (click)="goToKanban()">Try out kanban tool</button>
+      </div>
+
       <form (ngSubmit)="addTodo()">
         <div class="form-group">
           <label for="title">Title</label>
@@ -51,7 +56,7 @@ export class TodoFormComponent {
   description = "";
   dueDate: string | undefined = undefined;
 
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService, private router: Router) {}
 
   addTodo() {
     if (this.title.trim()) {
@@ -67,5 +72,9 @@ export class TodoFormComponent {
       this.description = "";
       this.dueDate = undefined;
     }
+  }
+
+  goToKanban() {
+    this.router.navigate(["/kanban"])
   }
 }
