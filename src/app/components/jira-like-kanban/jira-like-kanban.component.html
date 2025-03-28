@@ -1,4 +1,5 @@
-<div class="container">
+<h2>Kanban Board Example</h2>
+<div class="kanban-container">
   <div class="kanban-board">
     <div class="kanban-board-wrapper">
       <div class="kanban-board-columns">
@@ -26,7 +27,7 @@
               (cdkDropListDropped)="drop($event)"
             >
               <mat-card class="tickets" *ngFor="let ticket of column.tickets; let i = index" cdkDrag>
-                <button class="close" mat-button (click)="removeTicket(i)">X</button>
+                <button class="close" mat-button (click)="removeTicket(column, i)">X</button>
                 <mat-card-title>{{ ticket.title }} </mat-card-title>
                 <mat-card-content>{{ ticket.description }}</mat-card-content>
               </mat-card>
@@ -35,5 +36,48 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="kanban-board-form" [formGroup]="kanbanBoardForm">
+    <header><h2>Add Ticket</h2></header>
+    <div class="kanban-form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        class="form-input"
+        formControlName="title"
+        name="title"
+        placeholder="Enter ticket title"
+      />
+    </div>
+    <div class="kanban-form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        id="description"
+        class="form-input"
+        formControlName="description"
+        name="description"
+        placeholder="Enter ticket description"
+      />
+    </div>
+    <div>
+      <div class="radio-btn-group-title">Choose kanban board column</div>
+      <div class="radio-btn-group">
+      <label class="container">To Do
+        <input type="radio" checked="checked" value="toDo" formControlName="columnName">
+      </label>
+      <label class="container">In Progress
+        <input type="radio" value="inProgress" formControlName="columnName">
+      </label>
+      <label class="container">QA
+        <input type="radio" value="qa" formControlName="columnName">
+      </label>
+      <label class="container">Done
+        <input type="radio" value="done" formControlName="columnName">
+      </label>
+    </div>
+    </div>
+    <button class="btn btn-primary" (click)="addTicket()">Add Ticket</button>
   </div>
 </div>
