@@ -34,7 +34,7 @@ npm run type-check
 - Responsive design
 
 
-## Usage
+## Usage of the Kanban like example
 
 - On the main screen you have greeen button "Try out kanban tool". When you click it, it redirects you to a new page with Kanban Board Example.
 - There you have Kanban like board with four draggable columns ( To Do, In Progress, QA, Done ) and at the moment, each column has one draggable ticket in card form.
