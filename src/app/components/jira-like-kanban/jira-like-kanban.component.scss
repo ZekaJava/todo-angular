@@ -1,11 +1,12 @@
 .kanban-container {
   display: flex;
   height: 100%;
+  flex-wrap: wrap;
 }
 .kanban-board {
   display: flex;
   flex-grow: 0.5;
-  min-width: 0;
+  min-width: 400px;
   min-height: 0;
 }
 
