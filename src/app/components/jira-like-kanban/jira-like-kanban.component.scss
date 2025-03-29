@@ -47,6 +47,7 @@
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid;
+  cursor: move;
 }
 
 .tickets-container {
@@ -60,6 +61,7 @@
   display: flex;
   padding: 15px 12px;
   color: white;
+  cursor: move;
   background: black;
   border-bottom: solid 1px #ddd;
   border-radius: 10px;
